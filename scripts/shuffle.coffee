@@ -4,7 +4,7 @@ robot.respond /お腹すいた/i, (result) ->
   MIN_LUNCH_MEMBER_NUM = 4
   members = [
     'かなPさん'
-    '谷口'
+ ：   '谷口'
     '村上さん'
     '岡田さん'
     'ざっきーさん'
