@@ -25,7 +25,7 @@ module.exports = (robot) ->
     ]
     shuffled = _.shuffle(members)
     i = 1
-    res = '----- 本日のdawnシャッフルランチ -----'
+    res = '===== 本日のdawnシャッフルランチ =====\n'
     while shuffled.length >= DEFAULT_LUNCH_MEMBER_NUM + MIN_LUNCH_MEMBER_NUM
       lunchMembers = shuffled.splice(0, DEFAULT_LUNCH_MEMBER_NUM)
       res += 'チーム' + i + ': ' + lunchMembers.toString() + '\n'
