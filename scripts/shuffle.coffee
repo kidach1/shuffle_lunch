@@ -1,6 +1,6 @@
 module.exports = (robot) ->
 
-  robot.respond /お腹すいた/i, (result) ->
+  robot.hear /お腹すいた/i, (result) ->
     _ = require('lodash')
     DEFAULT_LUNCH_MEMBER_NUM = 4
     MIN_LUNCH_MEMBER_NUM = 4
@@ -31,7 +31,24 @@ module.exports = (robot) ->
       res += 'チーム' + i + ': ' + lunchMembers.toString() + '\n'
       i++
     res += 'チーム' + i + ': ' + shuffled.toString() + '\n'
-    res += 'have fun!'
+
+    recommend = [
+      'お寿司',
+      'バナナ',
+      '和食',
+      'ステーキ',
+      '肉料理',
+      '納豆',
+      '一心',
+      '中華',
+      '麺類',
+      '白米',
+      '魚料理',
+      '野菜',
+      '豆腐',
+    ]
+
+    res += '今日のおすすめメニューは' + _.sample(recommend) + 'だよ！have fun！';
     result.send res
 
 # ---
