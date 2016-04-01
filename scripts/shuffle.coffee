@@ -1,3 +1,4 @@
+module.exports = (robot) ->
 robot.respond /お腹すいた/i, (result) ->
   _ = require('lodash')
   DEFAULT_LUNCH_MEMBER_NUM = 4
