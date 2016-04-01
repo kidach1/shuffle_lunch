@@ -48,7 +48,8 @@ module.exports = (robot) ->
       '豆腐',
     ]
 
-    res += '今日のおすすめメニューは' + _.sample(recommend) + 'だよ！have fun！';
+    res += '\n今日のおすすめメニューは・・・' + _.sample(recommend) + 'だよ！';
+    res += 'have fun！';
     result.send res
 
 # ---
