@@ -2,8 +2,8 @@ module.exports = (robot) ->
 
   robot.hear /お腹すいた|おなかすいた|お腹空いた|おなか空いた/i, (result) ->
     _ = require('lodash')
-    DEFAULT_LUNCH_MEMBER_NUM = 4
-    MIN_LUNCH_MEMBER_NUM = 4
+    DEFAULT_LUNCH_MEMBER_NUM = 5
+    MIN_LUNCH_MEMBER_NUM = 5
     members = [
       'かなPさん'
       '谷口'
