@@ -24,6 +24,7 @@ module.exports = (robot) ->
       '遠藤さん'
       '島崎さん'
       '佐竹さん'
+      '能登さん'
     ]
     shuffled = _.shuffle(members)
     i = 1
