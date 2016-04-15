@@ -51,6 +51,16 @@ module.exports = (robot) ->
 
     res += '\n今日のおすすめメニューは・・・' + _.sample(recommend) + 'だよ！';
     res += '\nhave fun！';
+
+    random = [
+      'はいはい',
+      'へいへい',
+      'なに？',
+      'ここで辻村さんの一発芸',
+      '納豆'
+    ]
+    res = _.sample(random)
+
     result.send res
 
 # ---
