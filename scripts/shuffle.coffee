@@ -1,6 +1,6 @@
 module.exports = (robot) ->
 
-  robot.hear /お腹すいた|おなかすいた|お腹空いた|おなか空いた/i, (result) ->
+  robot.hear /腹減った|ハラ減った|はら減った|腹へった|おなか減った|お腹減った|おなかへった|お腹へった|お腹すいた|おなかすいた|お腹空いた|おなか空いた/i, (result) ->
     _ = require('lodash')
     DEFAULT_LUNCH_MEMBER_NUM = 5
     MIN_LUNCH_MEMBER_NUM = 5
