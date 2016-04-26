@@ -52,7 +52,7 @@ module.exports = (robot) ->
       '豆腐',
     ]
 
-    res += '\n今日のおすすめメニューは' + _.sample(recommend) + '！';
+    res += '\n今日のおすすめメニューは' + _.sample(recommend) + 'だよ！';
     res += '\nhave fun！';
 
 #    random = [
