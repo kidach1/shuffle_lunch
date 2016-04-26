@@ -30,12 +30,12 @@ module.exports = (robot) ->
     shuffled = _.shuffle(members)
     i = 1
     res = '===== 本日のdawnシャッフルランチ =====\n'
-    res += '※人数揃わない場合は適当にマージしてくれ\n'
     while shuffled.length >= DEFAULT_LUNCH_MEMBER_NUM + MIN_LUNCH_MEMBER_NUM
       lunchMembers = shuffled.splice(0, DEFAULT_LUNCH_MEMBER_NUM)
       res += 'チーム' + i + ': ' + lunchMembers.toString() + '\n'
       i++
     res += 'チーム' + i + ': ' + shuffled.toString() + '\n'
+    res += '※人数揃わない場合は適当にマージしてくれ\n'
 
     recommend = [
       'お寿司',
@@ -52,7 +52,7 @@ module.exports = (robot) ->
       '豆腐',
     ]
 
-    res += '\n今日のおすすめメニューは・・・' + _.sample(recommend) + 'だよ！';
+    res += '\n今日のおすすめメニューは' + _.sample(recommend) + '！';
     res += '\nhave fun！';
 
 #    random = [
