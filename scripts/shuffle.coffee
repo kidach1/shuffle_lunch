@@ -38,6 +38,7 @@ module.exports = (robot) ->
       res += 'チーム' + i + ': ' + lunchMembers.toString() + '\n'
       i++
     res += 'チーム' + i + ': ' + shuffled.toString() + '\n'
+    res += '\n'
     res += '※ 来れない人もいると思うので、適当にマージしたり柔軟に対応してくれ\n'
 
     recommend = [
