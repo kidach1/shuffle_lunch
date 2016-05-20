@@ -26,6 +26,9 @@ module.exports = (robot) ->
       '佐竹さん'
       '能登さん'
       '小野寺さん'
+	  'ぽりさん'
+	  '三好さん'
+	  'がーすーさん'
     ]
     shuffled = _.shuffle(members)
     i = 1
@@ -35,7 +38,7 @@ module.exports = (robot) ->
       res += 'チーム' + i + ': ' + lunchMembers.toString() + '\n'
       i++
     res += 'チーム' + i + ': ' + shuffled.toString() + '\n'
-    res += '※人数揃わない場合は適当にマージしてくれ\n'
+    res += '※ 来れない人もいると思うので、適当にマージしたり柔軟に対応してくれ\n'
 
     recommend = [
       'お寿司',
