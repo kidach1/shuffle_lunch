@@ -59,6 +59,7 @@ module.exports = (robot) ->
       'にんじん',
       '野菜',
       '豆腐',
+      '種なし梅（岡田さんセレクト）'
     ]
 
     res += '\n今日のおすすめメニューは' + _.sample(recommend) + 'だよ！';
