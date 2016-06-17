@@ -4,7 +4,7 @@ module.exports = (robot) ->
     _ = require('lodash')
 #    DEFAULT_LUNCH_MEMBER_NUM = 4
     DEFAULT_LUNCH_MEMBER_NUM = 5
-    MIN_LUNCH_MEMBER_NUM = 4
+    MIN_LUNCH_MEMBER_NUM = 3
     members = [
 #      '谷口'
       '村上さん'
