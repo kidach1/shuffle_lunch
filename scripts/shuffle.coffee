@@ -6,9 +6,9 @@ module.exports = (robot) ->
     DEFAULT_LUNCH_MEMBER_NUM = 5
     MIN_LUNCH_MEMBER_NUM = 4
     members = [
-      '谷口'
+#      '谷口'
       '村上さん'
-      '岡田さん'
+#      '岡田さん'
       'かなPさん'
       'ざっきーさん'
       'ばびーさん'
@@ -30,9 +30,9 @@ module.exports = (robot) ->
       '三好さん'
 #      'がーすーさん'
       '中村さん'
-      '田中(苑)さん'
-      '片石くん'
-      '石山くん'
+#     '田中(苑)さん'
+#     '片石くん'
+#     '石山くん'
       '倉田さん'
       '松本さん'
     ]
