@@ -6,9 +6,9 @@ module.exports = (robot) ->
     DEFAULT_LUNCH_MEMBER_NUM = 5
     MIN_LUNCH_MEMBER_NUM = 3
     members = [
-#      '谷口'
+      '谷口'
       '村上さん'
-#      '岡田さん'
+      '岡田さん'
       'かなPさん'
       'ざっきーさん'
       'ばびーさん'
@@ -18,6 +18,7 @@ module.exports = (robot) ->
       'かささん'
       'てるいさん'
       '田中さん(eng)'
+      'けいぽんさん'
       'たずさん'
       'あっきーさん'
 #      '平野さん'
@@ -30,11 +31,12 @@ module.exports = (robot) ->
       '三好さん'
 #      'がーすーさん'
       '中村さん'
-#     '田中(苑)さん'
+      '田中(苑)さん'
 #     '片石くん'
-#     '石山くん'
+      '石山くん'
       '倉田さん'
       '松本さん'
+	  '畑谷さん'
     ]
     shuffled = _.shuffle(members)
     i = 1
