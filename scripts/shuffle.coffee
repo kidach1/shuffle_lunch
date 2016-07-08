@@ -47,7 +47,7 @@ module.exports = (robot) ->
 
     j = 1
     while shuffled.length >= 0
-      lunchGroup[j] = shuffled.splice(0, 1)
+      lunchGroup[j].push(shuffled.splice(0, 1))
       j++
 
     k = 1
@@ -58,7 +58,7 @@ module.exports = (robot) ->
     res += '\n'
     res += '※ 来れない人もいると思うので、適当にマージしたり柔軟に対応してくれ\n'
 
-    
+
     recommend = [
       'お寿司',
       'バナナ',
