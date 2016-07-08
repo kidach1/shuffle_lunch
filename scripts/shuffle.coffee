@@ -1,14 +1,12 @@
 members = []
 module.exports = (robot) ->
-  robot.hear /set/i, (result) ->
-    members = [ "谷口", "村上さん", "岡田さん", "かなPさん", "ざっきーさん", "ばびーさん", "まいまい", "塩田さん", "あきさん", "かささん", "てるいさん", "田中さん(eng)", "けいぽんさん", "たずさん", "あっきーさん", "遠藤さん", "清山さん", "佐竹さん", "能登さん", "小野寺さん", "ぽりさん", "三好さん", "中村さん", "田中(苑)さん", "石山くん", "倉田さん", "松本さん", "畑谷さん" ]
-    robot.brain.set("members", members)
+  robot.respond /メンバーは (.*)/i, (msg) ->
+    robot.brain.set("members", msg.match[1])
+    msg.send "This is #{msg.match[1]}"
 
 
 module.exports = (robot) ->
   robot.hear /腹減った|ハラ減った|はらへった|はら減った|腹へった|おなか減った|お腹減った|おなかへった|お腹へった|お腹すいた|おなかすいた|お腹空いた|おなか空いた/i, (result) ->
-    members = [ "谷口", "村上さん", "岡田さん", "かなPさん", "ざっきーさん", "ばびーさん", "まいまい", "塩田さん", "あきさん", "かささん", "てるいさん", "田中さん(eng)", "けいぽんさん", "たずさん", "あっきーさん", "遠藤さん", "清山さん", "佐竹さん", "能登さん", "小野寺さん", "ぽりさん", "三好さん", "中村さん", "田中(苑)さん", "石山くん", "倉田さん", "松本さん", "畑谷さん" ]
-    robot.brain.set("members", members)
     MIN_LUNCH_MEMBER_NUM = undefined
     _ = undefined
     i = undefined
@@ -20,9 +18,10 @@ module.exports = (robot) ->
     shuffled = undefined
     _ = require("lodash")
     MIN_LUNCH_MEMBER_NUM = 5
-    members_from_redis = robot.brain.get("members")
-    console.log(members_from_redis)
-    shuffled = _.shuffle(members_from_redis)
+    members_str = robot.brain.get("members")
+    members_arr = members_str.split(",")
+    console.log(members_arr)
+    shuffled = _.shuffle(members_arr)
     lunchGroup = []
     i = 1
     res = "===== 本日のdawnシャッフルランチ =====\n"
