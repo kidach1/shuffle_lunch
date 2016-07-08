@@ -30,6 +30,8 @@ module.exports = (robot) ->
     while shuffled.length >= MIN_LUNCH_MEMBER_NUM
       lunchGroup[i] = shuffled.splice(0, MIN_LUNCH_MEMBER_NUM)
       i++
+
+    console.log(shuffled)
     j = 1
     while shuffled.length > 0
       console.log(j)
