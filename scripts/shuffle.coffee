@@ -2,7 +2,8 @@ members = []
 module.exports = (robot) ->
 
   robot.respond /test (.*)/i, (msg) ->
-    msg.send "This is #{msg.match[1]}"
+    msg.send robot.brain.get("members")
+
 
   robot.respond /メンバーは(.*)/i, (msg) ->
     robot.brain.set("members", msg.match[1])
