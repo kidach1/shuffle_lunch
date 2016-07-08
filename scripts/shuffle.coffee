@@ -2,6 +2,7 @@ members = []
 module.exports = (robot) ->
   robot.hear /set/i, (result) ->
     members = [ "谷口", "村上さん", "岡田さん", "かなPさん", "ざっきーさん", "ばびーさん", "まいまい", "塩田さん", "あきさん", "かささん", "てるいさん", "田中さん(eng)", "けいぽんさん", "たずさん", "あっきーさん", "遠藤さん", "清山さん", "佐竹さん", "能登さん", "小野寺さん", "ぽりさん", "三好さん", "中村さん", "田中(苑)さん", "石山くん", "倉田さん", "松本さん", "畑谷さん" ]
+    robot.brain.set("members", members)
 
 
 module.exports = (robot) ->
@@ -17,6 +18,8 @@ module.exports = (robot) ->
     shuffled = undefined
     _ = require("lodash")
     MIN_LUNCH_MEMBER_NUM = 5
+    members = robot.brain.get("members")
+    console.log(members)
     shuffled = _.shuffle(members)
     lunchGroup = []
     i = 1
