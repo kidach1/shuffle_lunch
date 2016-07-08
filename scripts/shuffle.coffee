@@ -36,7 +36,8 @@ module.exports = (robot) ->
     while shuffled.length > 0
       console.log(j)
       console.log(lunchGroup[j])
-      lunchGroup[j].push shuffled.splice(0, 1)[0]
+      groupIndex = ((shuffled.length)%(lunchGroup.length)+1)
+      lunchGroup[groupIndex].push shuffled.splice(0, 1)[0]
       j++
     k = 1
     while k < lunchGroup.length
