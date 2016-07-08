@@ -1,11 +1,9 @@
 members = []
 module.exports = (robot) ->
-  robot.respond /メンバーは (.*)/i, (msg) ->
+  robot.respond /メンバーは(.*)/i, (msg) ->
     robot.brain.set("members", msg.match[1])
-    msg.send "This is #{msg.match[1]}"
+    msg.send "#{msg.match[1]}"
 
-
-module.exports = (robot) ->
   robot.hear /腹減った|ハラ減った|はらへった|はら減った|腹へった|おなか減った|お腹減った|おなかへった|お腹へった|お腹すいた|おなかすいた|お腹空いた|おなか空いた/i, (result) ->
     MIN_LUNCH_MEMBER_NUM = undefined
     _ = undefined
