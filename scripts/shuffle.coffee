@@ -1,3 +1,9 @@
+members = []
+module.exports = (robot) ->
+  robot.hear /set/i, (result) ->
+    members = [ "谷口", "村上さん", "岡田さん", "かなPさん", "ざっきーさん", "ばびーさん", "まいまい", "塩田さん", "あきさん", "かささん", "てるいさん", "田中さん(eng)", "けいぽんさん", "たずさん", "あっきーさん", "遠藤さん", "清山さん", "佐竹さん", "能登さん", "小野寺さん", "ぽりさん", "三好さん", "中村さん", "田中(苑)さん", "石山くん", "倉田さん", "松本さん", "畑谷さん" ]
+
+
 module.exports = (robot) ->
   robot.hear /腹減った|ハラ減った|はらへった|はら減った|腹へった|おなか減った|お腹減った|おなかへった|お腹へった|お腹すいた|おなかすいた|お腹空いた|おなか空いた/i, (result) ->
     MIN_LUNCH_MEMBER_NUM = undefined
@@ -6,13 +12,11 @@ module.exports = (robot) ->
     j = undefined
     k = undefined
     lunchGroup = undefined
-    members = undefined
     recommend = undefined
     res = undefined
     shuffled = undefined
     _ = require("lodash")
     MIN_LUNCH_MEMBER_NUM = 5
-    members = [ "谷口", "村上さん", "岡田さん", "かなPさん", "ざっきーさん", "ばびーさん", "まいまい", "塩田さん", "あきさん", "かささん", "てるいさん", "田中さん(eng)", "けいぽんさん", "たずさん", "あっきーさん", "遠藤さん", "清山さん", "佐竹さん", "能登さん", "小野寺さん", "ぽりさん", "三好さん", "中村さん", "田中(苑)さん", "石山くん", "倉田さん", "松本さん", "畑谷さん" ]
     shuffled = _.shuffle(members)
     lunchGroup = []
     i = 1
