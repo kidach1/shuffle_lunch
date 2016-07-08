@@ -1,4 +1,5 @@
 module.exports = (robot) ->
+
   robot.hear /腹減った|ハラ減った|はらへった|はら減った|腹へった|おなか減った|お腹減った|おなかへった|お腹へった|お腹すいた|おなかすいた|お腹空いた|おなか空いた/i, (result) ->
     _ = require('lodash')
     MIN_LUNCH_MEMBER_NUM = undefined
