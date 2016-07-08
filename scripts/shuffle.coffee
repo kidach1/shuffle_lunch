@@ -2,9 +2,7 @@ module.exports = (robot) ->
 
   robot.hear /腹減った|ハラ減った|はらへった|はら減った|腹へった|おなか減った|お腹減った|おなかへった|お腹へった|お腹すいた|おなかすいた|お腹空いた|おなか空いた/i, (result) ->
     _ = require('lodash')
-#    DEFAULT_LUNCH_MEMBER_NUM = 4
-    DEFAULT_LUNCH_MEMBER_NUM = 5
-    MIN_LUNCH_MEMBER_NUM = 4
+    MIN_LUNCH_MEMBER_NUM = 5
     members = [
       '谷口'
       '村上さん'
@@ -39,16 +37,28 @@ module.exports = (robot) ->
       '畑谷さん'
     ]
     shuffled = _.shuffle(members)
+    lunchGroup = []
+
     i = 1
     res = '===== 本日のdawnシャッフルランチ =====\n'
-    while shuffled.length >= DEFAULT_LUNCH_MEMBER_NUM + MIN_LUNCH_MEMBER_NUM
-      lunchMembers = shuffled.splice(0, DEFAULT_LUNCH_MEMBER_NUM)
-      res += 'チーム' + i + ': ' + lunchMembers.toString() + '\n'
+    while shuffled.length >= MIN_LUNCH_MEMBER_NUM
+      lunchGroup[i] = shuffled.splice(0, MIN_LUNCH_MEMBER_NUM)
       i++
-    res += 'チーム' + i + ': ' + shuffled.toString() + '\n'
+
+    j = 1
+    while shuffled.length >= 0
+      lunchGroup[j] = shuffled.splice(0, 1)
+      j++
+
+    k = 1
+    for lunchMembers of lunchGroup
+      res += 'チーム' + k + ': ' + lunchMembers.toString() + '\n'
+      k++
+
     res += '\n'
     res += '※ 来れない人もいると思うので、適当にマージしたり柔軟に対応してくれ\n'
 
+    
     recommend = [
       'お寿司',
       'バナナ',
@@ -67,15 +77,6 @@ module.exports = (robot) ->
 
     res += '\n今日のおすすめメニューは' + _.sample(recommend) + 'だよ！';
     res += '\nhave fun！';
-
-#    random = [
-#      'はいはい',
-#      'へいへい',
-#      'なに？',
-#      'ここで辻村さんの一発芸',
-#      '納豆'
-#    ]
-#    res = _.sample(random)
 
     result.send res
 
