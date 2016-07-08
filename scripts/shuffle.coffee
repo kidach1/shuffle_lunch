@@ -20,9 +20,9 @@ module.exports = (robot) ->
     shuffled = undefined
     _ = require("lodash")
     MIN_LUNCH_MEMBER_NUM = 5
-    members = robot.brain.get("members")
-    console.log(members)
-    shuffled = _.shuffle(members)
+    members_from_redis = robot.brain.get("members")
+    console.log(members_from_redis)
+    shuffled = _.shuffle(members_from_redis)
     lunchGroup = []
     i = 1
     res = "===== 本日のdawnシャッフルランチ =====\n"
