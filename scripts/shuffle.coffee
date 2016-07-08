@@ -4,10 +4,9 @@ module.exports = (robot) ->
   robot.respond /test (.*)/i, (msg) ->
     msg.send robot.brain.get("members")
 
-
-  robot.respond /メンバーは(.*)/i, (msg) ->
+  robot.respond /メンバーは[s]+(.*)/i, (msg) ->
     robot.brain.set("members", msg.match[1])
-    msg.send "#{msg.match[1]}"
+    msg.send "OK、#{msg.message.user.name}！, メンバーは #{msg.match[1]} だね！"
 
   robot.hear /腹減った|ハラ減った|はらへった|はら減った|腹へった|おなか減った|お腹減った|おなかへった|お腹へった|お腹すいた|おなかすいた|お腹空いた|おなか空いた/i, (result) ->
     MIN_LUNCH_MEMBER_NUM = undefined
@@ -27,7 +26,7 @@ module.exports = (robot) ->
     shuffled = _.shuffle(members_arr)
     lunchGroup = []
     i = 1
-    res = "===== 本日のdawnシャッフルランチ =====\n"
+    res = "===== 本日のLXシャッフルランチ =====\n"
     while shuffled.length >= MIN_LUNCH_MEMBER_NUM
       lunchGroup[i] = shuffled.splice(0, MIN_LUNCH_MEMBER_NUM)
       i++
