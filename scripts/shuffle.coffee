@@ -21,8 +21,9 @@ module.exports = (robot) ->
     shuffled = undefined
     _ = require("lodash")
     MIN_LUNCH_MEMBER_NUM = 5
-    members_str = robot.brain.get("members")
-    members_arr = members_str.split(",")
+#    members_str = robot.brain.get("members")
+#    members_arr = members_str.split(",")
+    members_arr = []
     console.log(members_arr)
     shuffled = _.shuffle(members_arr)
     lunchGroup = []
