@@ -7,7 +7,6 @@ module.exports = (robot) ->
     j = undefined
     k = undefined
     lunchGroup = undefined
-    lunchMembers = undefined
     members = undefined
     recommend = undefined
     res = undefined
