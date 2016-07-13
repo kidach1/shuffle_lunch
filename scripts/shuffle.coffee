@@ -9,7 +9,7 @@ module.exports = (robot) ->
     msg.send "OK, #{msg.message.user.name}！ メンバーは【#{msg.match[1]}】だね！"
 
   robot.hear /腹減った|ハラ減った|はらへった|はら減った|腹へった|おなか減った|お腹減った|おなかへった|お腹へった|お腹すいた|おなかすいた|お腹空いた|おなか空いた/i, (result) ->
-    if (msg.message.user.name == "kanako.tsutsumi" || msg.message.user.name == "kidach1")
+    if (result.message.user.name == "kanako.tsutsumi")
       MIN_LUNCH_MEMBER_NUM = undefined
       _ = undefined
       i = 0
