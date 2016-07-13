@@ -9,46 +9,49 @@ module.exports = (robot) ->
     msg.send "OK, #{msg.message.user.name}！ メンバーは【#{msg.match[1]}】だね！"
 
   robot.hear /腹減った|ハラ減った|はらへった|はら減った|腹へった|おなか減った|お腹減った|おなかへった|お腹へった|お腹すいた|おなかすいた|お腹空いた|おなか空いた/i, (result) ->
-    MIN_LUNCH_MEMBER_NUM = undefined
-    _ = undefined
-    i = 0
-    j = 0
-    k = 0
-    lunchGroup = undefined
-    recommend = undefined
-    res = undefined
-    shuffled = undefined
-    _ = require("lodash")
-    MIN_LUNCH_MEMBER_NUM = 5
-    members_str = robot.brain.get("members")
-    members_arr = members_str.split(",")
-    console.log(members_arr)
-    shuffled = _.shuffle(members_arr)
-    lunchGroup = []
+    if (msg.message.user.name == "kanako.tsutsumi" || msg.message.user.name == "kidach1")
+      MIN_LUNCH_MEMBER_NUM = undefined
+      _ = undefined
+      i = 0
+      j = 0
+      k = 0
+      lunchGroup = undefined
+      recommend = undefined
+      res = undefined
+      shuffled = undefined
+      _ = require("lodash")
+      MIN_LUNCH_MEMBER_NUM = 5
+      members_str = robot.brain.get("members")
+      members_arr = members_str.split(",")
+      console.log(members_arr)
+      shuffled = _.shuffle(members_arr)
+      lunchGroup = []
 
-    res = "===== 本日のLXシャッフルランチ =====\n"
-    while shuffled.length >= MIN_LUNCH_MEMBER_NUM
-      lunchGroup[i] = shuffled.splice(0, MIN_LUNCH_MEMBER_NUM)
-      i++
+      res = "===== 本日のLXシャッフルランチ =====\n"
+      while shuffled.length >= MIN_LUNCH_MEMBER_NUM
+        lunchGroup[i] = shuffled.splice(0, MIN_LUNCH_MEMBER_NUM)
+        i++
 
-    console.log(shuffled)
+      console.log(shuffled)
 
-    while shuffled.length > 0
-      console.log(j)
-      console.log(lunchGroup[j])
-      console.log("shuffled.length", shuffled.length)
-      console.log("lunchGroup.length", lunchGroup.length)
-      groupIndex = ((shuffled.length)%(lunchGroup.length))
-      lunchGroup[groupIndex].push shuffled.splice(0, 1)[0]
-      j++
+      while shuffled.length > 0
+        console.log(j)
+        console.log(lunchGroup[j])
+        console.log("shuffled.length", shuffled.length)
+        console.log("lunchGroup.length", lunchGroup.length)
+        groupIndex = ((shuffled.length)%(lunchGroup.length))
+        lunchGroup[groupIndex].push shuffled.splice(0, 1)[0]
+        j++
 
-    while k < lunchGroup.length
-      res += "チーム" + (k+1) + ": " + lunchGroup[k].toString() + "\n"
-      k++
+      while k < lunchGroup.length
+        res += "チーム" + (k+1) + ": " + lunchGroup[k].toString() + "\n"
+        k++
 
-    res += "\n"
-    res += "※ 来れない人もいると思うので、適当にマージしたり柔軟に対応してくれ\n"
-    recommend = [ "お寿司", "バナナ", "TKG", "ステーキ", "納豆", "カスピ海ヨーグルト", "しめじ", "なめこ", "白米", "にんじん", "野菜", "豆腐", "種なし梅（岡田さんセレクト）" ]
-    res += "\n今日のおすすめメニューは" + _.sample(recommend) + "だよ！"
-    res += "\nhave fun！"
-    result.send res
+      res += "\n"
+      res += "※ 来れない人もいると思うので、適当にマージしたり柔軟に対応してくれ\n"
+      recommend = [ "お寿司", "バナナ", "TKG", "ステーキ", "納豆", "カスピ海ヨーグルト", "しめじ", "なめこ", "白米", "にんじん", "野菜", "豆腐", "種なし梅（岡田さんセレクト）" ]
+      res += "\n今日のおすすめメニューは" + _.sample(recommend) + "だよ！"
+      res += "\nhave fun！"
+      result.send res
+    else
+      result.send "つっつんにしか反応しません"
