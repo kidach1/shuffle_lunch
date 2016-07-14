@@ -54,4 +54,4 @@ module.exports = (robot) ->
       res += "\nhave fun！"
       result.send res
     else
-      result.send "つっつんにしか反応しません"
+      result.send "なんだ、つっつんじゃないのか"
