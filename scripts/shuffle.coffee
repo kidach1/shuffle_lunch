@@ -57,5 +57,5 @@ module.exports = (robot) ->
       res += "\nhave fun！"
       result.send res
     else
-      msg = [ "つっつんにしか反応しません", "なんだ、つっつんじゃないのか", "耐えろ", "合言葉変わったんだよね -> しゃっふるしゃっふる" ]
+      msg = [ "なんだ、つっつんじゃないのか", "耐えろ", "合言葉変わったんだよね -> しゃっふるしゃっふる" ]
       result.send _.sample(msg)
