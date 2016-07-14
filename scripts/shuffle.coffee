@@ -8,6 +8,9 @@ module.exports = (robot) ->
     robot.brain.set("members", msg.match[1])
     msg.send "OK, #{msg.message.user.name}！ メンバーは【#{msg.match[1]}】だね！"
 
+  robot.hear /しゃっふるしゃっふる/i, (msg) ->
+    msg.send "嘘なんだ、ごめんな"
+
   robot.hear /腹減った|ハラ減った|はらへった|はら減った|腹へった|おなか減った|お腹減った|おなかへった|お腹へった|お腹すいた|おなかすいた|お腹空いた|おなか空いた|おなかぺこぺこ|背中とお腹もくっついちゃう|お腹と背中がくっついちゃう|みんなでご飯いこー！/i, (result) ->
     if (result.message.user.name == "kanako.tsutsumi")
       MIN_LUNCH_MEMBER_NUM = undefined
@@ -54,4 +57,5 @@ module.exports = (robot) ->
       res += "\nhave fun！"
       result.send res
     else
-      result.send "なんだ、つっつんじゃないのか"
+      msg = [ "つっつんにしか反応しません", "なんだ、つっつんじゃないのか", "耐えろ", "合言葉変わったんだよね -> しゃっふるしゃっふる" ]
+      result.send _.sample(msg)
