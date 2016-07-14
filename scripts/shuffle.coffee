@@ -12,9 +12,10 @@ module.exports = (robot) ->
     msg.send "嘘なんだ、ごめんな"
 
   robot.hear /腹減った|ハラ減った|はらへった|はら減った|腹へった|おなか減った|お腹減った|おなかへった|お腹へった|お腹すいた|おなかすいた|お腹空いた|おなか空いた|おなかぺこぺこ|背中とお腹もくっついちゃう|お腹と背中がくっついちゃう|みんなでご飯いこー！/i, (result) ->
+    _ = undefined
+    _ = require("lodash")
     if (result.message.user.name == "kanako.tsutsumi")
       MIN_LUNCH_MEMBER_NUM = undefined
-      _ = undefined
       i = 0
       j = 0
       k = 0
@@ -22,7 +23,6 @@ module.exports = (robot) ->
       recommend = undefined
       res = undefined
       shuffled = undefined
-      _ = require("lodash")
       MIN_LUNCH_MEMBER_NUM = 5
       members_str = robot.brain.get("members")
       members_arr = members_str.split(",")
