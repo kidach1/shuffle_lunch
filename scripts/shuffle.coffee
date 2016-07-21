@@ -9,7 +9,7 @@ module.exports = (robot) ->
     msg.send "OK, #{msg.message.user.name}！ メンバーは【#{msg.match[1]}】だね！"
 
   robot.hear /しゃっふるしゃっふる/i, (msg) ->
-    msg.send "ご、めんな・・・嘘・・・な、んだ。。"
+    msg.send "ご、めんな・・嘘・・・な、んだ。。"
 
   robot.hear /腹減った|ハラ減った|はらへった|はら減った|腹へった|おなか減った|お腹減った|おなかへった|お腹へった|お腹すいた|おなかすいた|お腹空いた|おなか空いた|おなかぺこぺこ|背中とお腹もくっついちゃう|お腹と背中がくっついちゃう|みんなでご飯いこー！/i, (result) ->
     _ = undefined
