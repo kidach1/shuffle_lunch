@@ -15,7 +15,7 @@ module.exports = (robot) ->
   robot.respond /メンバーは(.*)/i, (result) ->
     _ = undefined
     _ = require("lodash")
-    if (result.message.user.name == "kanako.tsutsumi" || result.message.user.name == "kidach1")
+    if (result.message.user.name == "kanako.tsutsumi")
       MIN_LUNCH_MEMBER_NUM = undefined
       i = 0
       j = 0
