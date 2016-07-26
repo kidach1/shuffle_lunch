@@ -26,7 +26,7 @@ module.exports = (robot) ->
       shuffled = undefined
       MIN_LUNCH_MEMBER_NUM = 5
 #      members_str = robot.brain.get("members")
-      members_arr = msg.split(",")
+      members_arr = msg.split("、")
       console.log(members_arr)
       shuffled = _.shuffle(members_arr)
       lunchGroup = []
