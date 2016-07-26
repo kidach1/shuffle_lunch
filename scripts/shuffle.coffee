@@ -5,7 +5,7 @@ module.exports = (robot) ->
     msg.send robot.brain.get("members")
 
   robot.respond /メンバーは(.*)/i, (msg) ->
-    robot.brain.redis_hash.client.set("members", msg.match[1])
+#    robot.brain.redis_hash.client.set("members", msg.match[1])
     msg.send "OK, #{msg.message.user.name}！ メンバーは【#{msg.match[1]}】だね！"
 
   robot.hear /しゃっふるしゃっふる/i, (msg) ->
@@ -26,7 +26,7 @@ module.exports = (robot) ->
       shuffled = undefined
       MIN_LUNCH_MEMBER_NUM = 5
 #      members_str = robot.brain.get("members")
-      members_arr = msg.split("、")
+      members_arr = msg.match[1].split("、")
       console.log(members_arr)
       shuffled = _.shuffle(members_arr)
       lunchGroup = []
