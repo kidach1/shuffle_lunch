@@ -11,7 +11,8 @@ module.exports = (robot) ->
   robot.hear /しゃっふるしゃっふる/i, (msg) ->
     msg.send "ご、めんな・・嘘・・・な、んだ。。"
 
-  robot.hear /腹減った|ハラ減った|はらへった|はら減った|腹へった|おなか減った|お腹減った|おなかへった|お腹へった|お腹すいた|おなかすいた|お腹空いた|おなか空いた|おなかぺこぺこ|背中とお腹もくっついちゃう|お腹と背中がくっついちゃう|みんなでご飯いこー！/i, (result) ->
+#  robot.hear /腹減った|ハラ減った|はらへった|はら減った|腹へった|おなか減った|お腹減った|おなかへった|お腹へった|お腹すいた|おなかすいた|お腹空いた|おなか空いた|おなかぺこぺこ|背中とお腹もくっついちゃう|お腹と背中がくっついちゃう|みんなでご飯いこー！/i, (result) ->
+  robot.respond /メンバーは(.*)/i, (msg) ->
     _ = undefined
     _ = require("lodash")
     if (result.message.user.name == "kanako.tsutsumi")
@@ -24,8 +25,8 @@ module.exports = (robot) ->
       res = undefined
       shuffled = undefined
       MIN_LUNCH_MEMBER_NUM = 5
-      members_str = robot.brain.get("members")
-      members_arr = members_str.split(",")
+#      members_str = robot.brain.get("members")
+      members_arr = msg.split(",")
       console.log(members_arr)
       shuffled = _.shuffle(members_arr)
       lunchGroup = []
