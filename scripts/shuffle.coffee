@@ -12,7 +12,7 @@ module.exports = (robot) ->
     msg.send "ご、めんな・・嘘・・・な、んだ。。"
 
 #  robot.hear /腹減った|ハラ減った|はらへった|はら減った|腹へった|おなか減った|お腹減った|おなかへった|お腹へった|お腹すいた|おなかすいた|お腹空いた|おなか空いた|おなかぺこぺこ|背中とお腹もくっついちゃう|お腹と背中がくっついちゃう|みんなでご飯いこー！/i, (result) ->
-  robot.respond /みんなでご飯いこー！メンバーは(.*)/i, (result) ->
+  robot.hear /みんなでご飯いこー！メンバーは(.*)/i, (result) ->
     _ = undefined
     _ = require("lodash")
     if (result.message.user.name == "kanako.tsutsumi" || result.message.user.name == "kidach1")
