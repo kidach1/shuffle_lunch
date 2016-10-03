@@ -30,7 +30,7 @@ module.exports = (robot) ->
     shuffled = _.shuffle(members_arr)
     lunchGroup = []
 
-    res = "===== 本日のLXシャッフルランチ =====\n"
+    res = "===== 本日のシャッフルランチ =====\n"
     while shuffled.length >= MIN_LUNCH_MEMBER_NUM
       lunchGroup[i] = shuffled.splice(0, MIN_LUNCH_MEMBER_NUM)
       i++
