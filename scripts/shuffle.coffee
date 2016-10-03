@@ -15,7 +15,7 @@ module.exports = (robot) ->
   robot.hear /みんなでご飯いこー！メンバーは(.*)/i, (result) ->
     _ = undefined
     _ = require("lodash")
-    if (result.message.user.name == "kanako.tsutsumi" || result.message.user.name == "kidach1")
+#    if (result.message.user.name == "kanako.tsutsumi" || result.message.user.name == "kidach1")
       MIN_LUNCH_MEMBER_NUM = undefined
       i = 0
       j = 0
@@ -57,6 +57,6 @@ module.exports = (robot) ->
       res += "\n今日のおすすめメニューは" + _.sample(recommend) + "だよ！"
       res += "\nhave fun！"
       result.send res
-    else
-      msg = [ "なんだ、つっつんじゃないのか", "耐えろ", "合言葉変わったんだよね -> しゃっふるしゃっふる" ]
-      result.send _.sample(msg)
+#    else
+#      msg = [ "なんだ、つっつんじゃないのか", "耐えろ", "合言葉変わったんだよね -> しゃっふるしゃっふる" ]
+#      result.send _.sample(msg)
