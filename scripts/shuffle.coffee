@@ -5,13 +5,9 @@ module.exports = (robot) ->
     msg.send robot.brain.get("members")
 
 #  robot.respond /メンバーは(.*)/i, (msg) ->
-##    robot.brain.redis_hash.client.set("members", msg.match[1])
+#    robot.brain.redis_hash.client.set("members", msg.match[1])
 #    msg.send "OK, #{msg.message.user.name}！ メンバーは【#{msg.match[1]}】だね！"
 
-  robot.hear /しゃっふるしゃっふる/i, (msg) ->
-    msg.send "ごめんな・・・嘘なんだ・・・"
-
-#  robot.hear /腹減った|ハラ減った|はらへった|はら減った|腹へった|おなか減った|お腹減った|おなかへった|お腹へった|お腹すいた|おなかすいた|お腹空いた|おなか空いた|おなかぺこぺこ|背中とお腹もくっついちゃう|お腹と背中がくっついちゃう|みんなでご飯いこー！/i, (result) ->
   robot.hear /みんなでご飯いこー！メンバーは(.*)/i, (result) ->
     _ = undefined
     _ = require("lodash")
@@ -24,7 +20,6 @@ module.exports = (robot) ->
     res = undefined
     shuffled = undefined
     MIN_LUNCH_MEMBER_NUM = 5
-    #      members_str = robot.brain.get("members")
     members_arr = result.match[1].split("、")
     console.log(members_arr)
     shuffled = _.shuffle(members_arr)
@@ -35,13 +30,7 @@ module.exports = (robot) ->
       lunchGroup[i] = shuffled.splice(0, MIN_LUNCH_MEMBER_NUM)
       i++
 
-    console.log(shuffled)
-
     while shuffled.length > 0
-      console.log(j)
-      console.log(lunchGroup[j])
-      console.log("shuffled.length", shuffled.length)
-      console.log("lunchGroup.length", lunchGroup.length)
       groupIndex = ((shuffled.length)%(lunchGroup.length))
       lunchGroup[groupIndex].push shuffled.splice(0, 1)[0]
       j++
